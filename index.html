@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  
+
+<head>
+  <meta name="theme" content="Syna">
+  <meta name="theme-version" content="v0.17.4">
+  <meta name="theme-url" content="https://syna.okkur.org">
+  <meta name="theme-description" content="Highly customizable open source theme for Hugo based static websites">
+  <meta name="theme-author" content="Okkur Labs">
+  <meta name="theme-author-url" content="https://about.okkur.org">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google" content="notranslate" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content=" [09 May 2022] &#34;Robot Person Following in Uniform Crowd Environment&#34; accepted in ICRA 2022 Workshop. [04 Feb 2022] PTUG dataset submitted to IEEE Transactions on Human Machine Systems. ">
+  <meta property="og:title" content="PTUG Benchmark" />
+<meta property="og:description" content="Robot-Person Tracking in Uniform Appearance Scenarios: A New Dataset and Challenges" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ptug.github.io/" />
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PTUG Benchmark" />
+  <meta name="twitter:description" content=" [09 May 2022] &#34;Robot Person Following in Uniform Crowd Environment&#34; accepted in ICRA 2022 Workshop. [04 Feb 2022] PTUG dataset submitted to IEEE Transactions on Human Machine Systems. ">
+  <meta name="twitter:url" content="https://ptug.github.io/" />
+        <meta property="og:image" content="">
+        <meta name="twitter:image" content="">
+  <meta name="author" content="Okkur Labs">
+
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>PTUG Benchmark</title>
+
+  <!-- Theme Styles -->
+  <style>
+.mx-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+ 
+@-ms-viewport {
+  width: device-width; }
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 540px;
+  max-width: 720px;
+  max-width: 960px;
+  max-width: 1140px; }
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0; }
+  .no-gutters > .col,
+  .no-gutters > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0; }
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+.col-auto {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%; }
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none; }
+
+.col-1 {
+  flex: 0 0 8.33333%;
+  max-width: 8.33333%; }
+
+.col-2 {
+  flex: 0 0 16.66667%;
+  max-width: 16.66667%; }
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%; }
+
+.col-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%; }
+
+.col-5 {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%; }
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+.col-7 {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%; }
+
+.col-8 {
+  flex: 0 0 66.66667%;
+  max-width: 66.66667%; }
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%; }
+
+.col-10 {
+  flex: 0 0 83.33333%;
+  max-width: 83.33333%; }
+
+.col-11 {
+  flex: 0 0 91.66667%;
+  max-width: 91.66667%; }
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%; }
+
+.order-first {
+  order: -1; }
+
+.order-last {
+  order: 13; }
+
+.order-0 {
+  order: 0; }
+
+.order-1 {
+  order: 1; }
+
+.order-2 {
+  order: 2; }
+
+.order-3 {
+  order: 3; }
+
+.order-4 {
+  order: 4; }
+
+.order-5 {
+  order: 5; }
+
+.order-6 {
+  order: 6; }
+
+.order-7 {
+  order: 7; }
+
+.order-8 {
+  order: 8; }
+
+.order-9 {
+  order: 9; }
+
+.order-10 {
+  order: 10; }
+
+.order-11 {
+  order: 11; }
+
+.order-12 {
+  order: 12; }
+
+.offset-1 {
+  margin-left: 8.33333%; }
+
+.offset-2 {
+  margin-left: 16.66667%; }
+
+.offset-3 {
+  margin-left: 25%; }
+
+.offset-4 {
+  margin-left: 33.33333%; }
+
+.offset-5 {
+  margin-left: 41.66667%; }
+
+.offset-6 {
+  margin-left: 50%; }
+
+.offset-7 {
+  margin-left: 58.33333%; }
+
+.offset-8 {
+  margin-left: 66.66667%; }
+
+.offset-9 {
+  margin-left: 75%; }
+
+.offset-10 {
+  margin-left: 83.33333%; }
+
+.offset-11 {
+  margin-left: 91.66667%; }
+
+.d-none {
+  display: none !important; }
+
+.d-inline {
+  display: inline !important; }
+
+.d-inline-block {
+  display: inline-block !important; }
+
+.d-block {
+  display: block !important; }
+
+.d-table {
+  display: table !important; }
+
+.d-table-row {
+  display: table-row !important; }
+
+.d-table-cell {
+  display: table-cell !important; }
+
+.d-flex {
+  display: flex !important; }
+
+.d-inline-flex {
+  display: inline-flex !important; }
+
+@media print {
+  .d-print-none {
+    display: none !important; }
+  .d-print-inline {
+    display: inline !important; }
+  .d-print-inline-block {
+    display: inline-block !important; }
+  .d-print-block {
+    display: block !important; }
+  .d-print-table {
+    display: table !important; }
+  .d-print-table-row {
+    display: table-row !important; }
+  .d-print-table-cell {
+    display: table-cell !important; }
+  .d-print-flex {
+    display: flex !important; }
+  .d-print-inline-flex {
+    display: inline-flex !important; } }
+
+.flex-row {
+  flex-direction: row !important; }
+
+.flex-column {
+  flex-direction: column !important; }
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important; }
+
+.flex-column-reverse {
+  flex-direction: column-reverse !important; }
+
+.flex-wrap {
+  flex-wrap: wrap !important; }
+
+.flex-nowrap {
+  flex-wrap: nowrap !important; }
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important; }
+
+.flex-fill {
+  flex: 1 1 auto !important; }
+
+.flex-grow-0 {
+  flex-grow: 0 !important; }
+
+.flex-grow-1 {
+  flex-grow: 1 !important; }
+
+.flex-shrink-0 {
+  flex-shrink: 0 !important; }
+
+.flex-shrink-1 {
+  flex-shrink: 1 !important; }
+
+.justify-content-start {
+  justify-content: flex-start !important; }
+
+.justify-content-end {
+  justify-content: flex-end !important; }
+
+.justify-content-center {
+  justify-content: center !important; }
+
+.justify-content-between {
+  justify-content: space-between !important; }
+
+.justify-content-around {
+  justify-content: space-around !important; }
+
+.align-items-start {
+  align-items: flex-start !important; }
+
+.align-items-end {
+  align-items: flex-end !important; }
+
+.align-items-center {
+  align-items: center !important; }
+
+.align-items-baseline {
+  align-items: baseline !important; }
+
+.align-items-stretch {
+  align-items: stretch !important; }
+
+.align-content-start {
+  align-content: flex-start !important; }
+
+.align-content-end {
+  align-content: flex-end !important; }
+
+.align-content-center {
+  align-content: center !important; }
+
+.align-content-between {
+  align-content: space-between !important; }
+
+.align-content-around {
+  align-content: space-around !important; }
+
+.align-content-stretch {
+  align-content: stretch !important; }
+
+.align-self-auto {
+  align-self: auto !important; }
+
+.align-self-start {
+  align-self: flex-start !important; }
+
+.align-self-end {
+  align-self: flex-end !important; }
+
+.align-self-center {
+  align-self: center !important; }
+
+.align-self-baseline {
+  align-self: baseline !important; }
+
+.align-self-stretch {
+  align-self: stretch !important; }
+</style>
+
+      <link href="https://ptug.github.io/style.min.70db6c5bab28c2c10567f73a19b206de5da359fd0b298f46164c638a4c9fb4e4.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="icon" sizes="16x16 32x32" type="image/x-icon" href="/favicon.ico">
+      <link rel="icon" href="/favicon.png">
+      <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script>
+    window.syna = {
+      
+    };
+  </script>
+  <script src="/scripts/syna-head.min.947341ad24dd3253dfbe2ce8aeedfa838860075c3fe729f15b49c09e42c71a64.js"></script></head>
+<body class="bg-secondary">
+    <!-- Navigation --><nav class="overlay fragment navbar navbar-expand-lg py-2 scroll-spy bg-light navbar-light" id="nav" role="navigation">
+  <div class="container">
+      <a class="navbar-brand py-0" href="/#">
+        <img src="/images/logo.svg" height="35" class="d-inline-block align-top" alt="PTUG">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse justify-content-end collapse show" id="navbarCollapse">
+      <ul class="navbar-nav"><li class="nav-item ">
+              <a
+                  class="nav-link"
+                
+                  href="/"
+                >
+                Home
+              </a>
+              
+            </li><li class="nav-item ">
+              <a
+                  class="nav-link"
+                
+                  href="/about"
+                >
+                About Us
+              </a>
+              
+            </li><li class="nav-item ">
+              <a
+                  class="nav-link anchor"
+                
+                  href="/#contact"
+                >
+                Contact
+              </a>
+              
+            </li>
+      </ul>
+    </div>
+  </div>
+    <div class="d-none d-lg-block pl-auto">
+      <a class="btn btn-light ignore-color-change" href="https://github.com/ku-vsap" role="button" title="Github">
+        <i class="fab fa-github mr-2"></i>Github</a>
+    </div></nav>
+
+<div class="scroll-to-top bg-primary has-font-icon"
+  title="Back to top"
+  ><i class="fas fa-angle-up"></i><span class="sr-only">Back to top</span>
+</div>
+
+<!-- Hero -->
+<header id="hero" class="fragment hero">
+    <div style=""class="jumbotron text-center mb-0 bg-light">
+    <div id="hero-particles-js" class="hero-particles particles-js"></div>
+      <div class="hero-image-container row justify-content-center align-items-start">
+        <img
+          class="hero-image overlay img-fluid"
+          src="/images/logo.svg"
+          alt="Syna Theme"
+          style="width: 500px !important;"
+        ></img>
+      </div>
+      <div class="hero-subtitle-container row justify-content-center align-items-start">
+        <h1 class="hero-subtitle overlay jumbotron-heading my-4 text-body">Robot-Person Tracking in Uniform Appearance Scenarios</h1>
+      </div><div class="hero-buttons">
+      <a class="overlay btn btn-lg m-2 btn-info " href="/#">
+        <div class="column justify-content-center align-content-center">Paper</div>
+      </a>
+      <a class="overlay btn btn-lg m-2 btn-primary " href="https://zenodo.org/record/6915133#.YuIqexxBw5k">
+        <div class="column justify-content-center align-content-center">Download</div>
+      </a>
+      <a class="overlay btn btn-lg m-2 btn-success " href="https://github.com/ku-vsap/PTUG-TOOLKIT">
+        <div class="column justify-content-center align-content-center">Toolkit</div>
+      </a>
+  </div>
+  </div>
+</header><script>
+    var fragmentName = "hero";window.syna.api.register("hero", "hero-" + fragmentName, {
+      selector: "hero-particles-js",
+      config: JSON.parse("\n{\n    \"particles\": {\n      \"number\": {\n        \"value\": 80,\n        \"density\": {\n          \"enable\": true,\n          \"value_area\": 800\n        }\n      },\n      \"color\": {\n        \"value\": \"#ffffff\"\n      },\n      \"shape\": {\n        \"type\": \"circle\",\n        \"stroke\": {\n          \"width\": 0,\n          \"color\": \"#000000\"\n        },\n        \"polygon\": {\n          \"nb_sides\": 5\n        },\n        \"image\": {\n          \"src\": \"img/github.svg\",\n          \"width\": 100,\n          \"height\": 100\n        }\n      },\n      \"opacity\": {\n        \"value\": 0.5,\n        \"random\": false,\n        \"anim\": {\n          \"enable\": false,\n          \"speed\": 1,\n          \"opacity_min\": 0.1,\n          \"sync\": false\n        }\n      },\n      \"size\": {\n        \"value\": 3,\n        \"random\": true,\n        \"anim\": {\n          \"enable\": false,\n          \"speed\": 40,\n          \"size_min\": 0.1,\n          \"sync\": false\n        }\n      },\n      \"line_linked\": {\n        \"enable\": true,\n        \"distance\": 150,\n        \"color\": \"#ffffff\",\n        \"opacity\": 0.4,\n        \"width\": 1\n      },\n      \"move\": {\n        \"enable\": true,\n        \"speed\": 6,\n        \"direction\": \"none\",\n        \"random\": false,\n        \"straight\": false,\n        \"out_mode\": \"out\",\n        \"bounce\": false,\n        \"attract\": {\n          \"enable\": false,\n          \"rotateX\": 600,\n          \"rotateY\": 1200\n        }\n      }\n    },\n    \"interactivity\": {\n      \"detect_on\": \"canvas\",\n      \"events\": {\n        \"onhover\": {\n          \"enable\": true,\n          \"mode\": \"repulse\"\n        },\n        \"onclick\": {\n          \"enable\": true,\n          \"mode\": \"push\"\n        },\n        \"resize\": true\n      },\n      \"modes\": {\n        \"grab\": {\n          \"distance\": 400,\n          \"line_linked\": {\n            \"opacity\": 1\n          }\n        },\n        \"bubble\": {\n          \"distance\": 400,\n          \"size\": 40,\n          \"duration\": 2,\n          \"opacity\": 8,\n          \"speed\": 3\n        },\n        \"repulse\": {\n          \"distance\": 200,\n          \"duration\": 0.4\n        },\n        \"push\": {\n          \"particles_nb\": 4\n        },\n        \"remove\": {\n          \"particles_nb\": 2\n        }\n      }\n    },\n    \"retina_detect\": true\n  }"),
+    });
+  </script>
+  
+<!-- Items -->
+<section id="motivations" class="fragment ">
+    <div class="container-fluid bg-primary ">
+    <div class="container py-5 ">
+
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-center text-body">
+      <h2>Motivations</h2>
+    </div>
+  </div><div class="subtitle-container row mx-0">
+    <div class="subtitle col pt-4 pb-0 px-0 text-center text-body">
+      <h5>A Large-Scale, First of its kind Dataset, and Benchmark for Person Tracking in the presence of highly similar appearing distractors.</h5>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch items">
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+                  <a href="/#" class="col align-items-center d-flex flex-column header text-body">
+                  <span class="fa-stack fa-3x m-2" title="Large Scale Dataset">
+                    <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                    <i class="fas fa-image fa-stack-1x fa-inverse"></i>
+                    <span class="sr-only">Large Scale Dataset</span>
+                  </span>
+                  </a>
+            </div>
+              <div class="row justify-content-center text-center">
+                  <a href="/#" class="col justify-content-between d-flex flex-column header text-body">
+                  <h4 class="mb-3 text-body">Large Scale Dataset</h4>
+                  </a>
+              </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <p>45 Video Sequences with several challenging attributes</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+                  <a href="/#" class="col align-items-center d-flex flex-column header text-body">
+                  <span class="fa-stack fa-3x m-2" title="Influence of Distractors">
+                    <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                    <i class="fas fa-users fa-stack-1x fa-inverse"></i>
+                    <span class="sr-only">Influence of Distractors</span>
+                  </span>
+                  </a>
+            </div>
+              <div class="row justify-content-center text-center">
+                  <a href="/#" class="col justify-content-between d-flex flex-column header text-body">
+                  <h4 class="mb-3 text-body">Influence of Distractors</h4>
+                  </a>
+              </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <p>Contains <em>No distractors</em> videos and <em>With distractors</em> videos</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+                  <a href="/#" class="col align-items-center d-flex flex-column header text-body">
+                  <span class="fa-stack fa-3x m-2" title="Person Tracking">
+                    <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                    <i class="fas fa-expand fa-stack-1x fa-inverse"></i>
+                    <span class="sr-only">Person Tracking</span>
+                  </span>
+                  </a>
+            </div>
+              <div class="row justify-content-center text-center">
+                  <a href="/#" class="col justify-content-between d-flex flex-column header text-body">
+                  <h4 class="mb-3 text-body">Person Tracking</h4>
+                  </a>
+              </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <p>More than 85K bounding boxes</p>
+
+                </div>
+              </div>
+          </div></div>
+    </div>
+    </div>
+</section>
+
+<!-- Items -->
+<section id="keyfeatures" class="fragment ">
+    <div class="container-fluid bg-secondary ">
+    <div class="container py-5 ">
+
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-center text-body">
+      <h2>Key Features</h2>
+    </div>
+  </div><div class="subtitle-container row mx-0">
+    <div class="subtitle col pt-4 pb-0 px-0 text-center text-body">
+      <h5>Incorporates several real-life possible situations for which the trackers should be robustly evaluated</h5>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch items">
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="uniformity">Uniformity</h2>
+<p>This is the unique attribute of our dataset that introduces a very specific challenge to the tracking paradigm. People, including the target and non-target persons (distractors), wear the same garment during the whole recording.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="camouflage">Camouflage</h2>
+<p>This feature introduces a situation in which the background is highly similar to the target appearance. The background of the environment is same as target appearance.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="static-obstacles">Static Obstacles</h2>
+<p>Static obstacles are objects placed in the scene, such as boxes and banners, which can hide the target person partially or fully when he is walking during the recording.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="pose-variation">Pose Variation</h2>
+<p>Human body is deformable on its own, however to include different poses we have explicitly added poses like running, stretching, and squatting in the videos.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="illumination-variation">Illumination Variation</h2>
+<p>The video sequences also has the illumination intensity of the environment changed from light to dark during tracking.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="occlusion">Occlusion</h2>
+<p>Occlusion is caused by the integration of  obstacles in the scene or by the presence of other people partially cover the appearance of the target.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="motion-blur">Motion Blur</h2>
+<p>The blur effect has been added as a nuisance factor in the video to assess the robustness of the tracking.</p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <h2 id="out-of-view">Out of View</h2>
+<p>This situation corresponds to an attribute when the target person leaves the frame or is not visible in the frame. The availability of the target person cannot be known/confirmed given the information in the frame.</p>
+
+                </div>
+              </div>
+          </div></div>
+    </div>
+    </div>
+</section>
+
+<!-- Items -->
+<section id="samples_header" class="fragment ">
+    <div class="container-fluid bg-primary ">
+    <div class="container py-5 ">
+
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-center text-body">
+      <h2>First frame of the collected video sequences</h2>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch items">
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+                  <a href="/#" class="col align-items-center d-flex flex-column header text-body">
+                  </a>
+            </div>
+          </div></div>
+    </div>
+    </div>
+</section>
+
+
+<!-- Hero -->
+<header id="samples_hero" class="fragment hero">
+    <div
+      style="min-height: 600px;background-image:url(/images/samples.png)"
+      class="jumbotron text-center header-image mb-0 bg-primary"><div class="hero-buttons">
+  </div>
+  </div>
+</header>
+<!-- Items -->
+<section id="overall_comparision" class="fragment ">
+    <div class="container-fluid bg-light ">
+    <div class="container py-5 ">
+
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-center text-body">
+      <h2>Performance comparison of SOTA Trackers</h2>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch items">
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+                  <a href="/#" class="col align-items-center d-flex flex-column header text-body">
+                  <img src="/images/overall_comparision_new.png" class="p-10 w-100 mb-2" alt="">
+                  </a>
+            </div>
+              <div class="row justify-content-center text-center p-2">
+                <div class=" text-body">
+                  <p>Two different scenarios including single-person tracking and multi-person tracking in uniform appearance scenarios are considered. And, the performance of the trackers highly degrades in the presence of uniform appearance in the scenes.</p>
+
+                </div>
+              </div>
+          </div></div>
+    </div>
+    </div>
+</section>
+
+<!-- Items -->
+<section id="tracker_visualization_header" class="fragment ">
+    <div class="container-fluid bg-light ">
+    <div class="container py-5 ">
+
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-center text-body">
+      <h2>Visualization of the SOTA trackers&rsquo; performance on PTUA dataset</h2>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch items">
+          <div class="col-md-4 items-column">
+            <div class="row image justify-content-center align-items-center">
+                  <a href="/#" class="col align-items-center d-flex flex-column header text-body">
+                  </a>
+            </div>
+          </div></div>
+    </div>
+    </div>
+</section>
+
+
+<!-- Hero -->
+<header id="tracker_visualization_hero" class="fragment hero">
+    <div
+      style="min-height: 300px;background-image:url(/images/tracker_visualization.png)"
+      class="jumbotron text-center header-image mb-0 bg-light"><div class="hero-buttons">
+  </div>
+  </div>
+</header>
+<!-- Content -->
+<section id="recent_news" class="fragment content-fragment">
+    <div class="container-fluid bg-light overlay">
+    <div class="container py-5 overlay">
+<div class="row">
+      <article class="col-md-12">
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-left text-body">
+      <h2>Recent News</h2>
+    </div>
+  </div>
+<div class="content-body col-12 content px-0 text-body"><ul>
+<li><i>[09 May 2022] "Robot Person Following in Uniform Crowd Environment" accepted in ICRA 2022 Workshop.</i></li>
+<li><i>[04 Feb 2022] PTUG dataset submitted to IEEE Transactions on Human Machine Systems.</i></li>
+</ul>
+</div>
+    </article>
+  </div>
+    </div>
+    </div>
+</section>
+
+<!-- Content -->
+<section id="publications" class="fragment content-fragment">
+    <div class="container-fluid bg-light overlay">
+    <div class="container py-5 overlay">
+<div class="row">
+      <article class="col-md-12">
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-left text-body">
+      <h2>Publications</h2>
+    </div>
+  </div>
+<div class="content-body col-12 content px-0 text-body"><ul>
+<li>
+<h4>Robot Person Following in Uniform Crowd Environment</h4>
+<p style='text-align: justify;'> 
+Adarsh Ghimire*, Xiaoxiong Zhang*, Sajid Javed, Jorge Dias, Naoufel Werghi<br>
+ICRA Workshop 2022: ROBOTIC PERCEPTION AND MAPPING: EMERGING TECHNIQUES
+[<a href="https://arxiv.org/abs/2205.10553">PDF</a>]
+</p>
+</li>
+<li>
+<h4>Person Tracking in a Uniform Group: A New Dataset and Challenges</h4>
+<p style='text-align: justify;'> 
+Xiaoxiong Zhang*, Adarsh Ghimire*, Sajid Javed, Jorge Dias, Naoufel Werghi<br>
+IEEE Transactions on Human Machine Systems <i>[Under Review]</i>
+<!-- [<a href="https://arxiv.org/abs/2205.10553">PDF</a>] -->
+</p>
+</li>
+</ul></div>
+    </article>
+  </div>
+    </div>
+    </div>
+</section>
+
+<!-- Member -->
+<section id="member" class="fragment ">
+    <div class="container-fluid bg-primary ">
+    <div class="container py-5 ">
+
+  <div class="title-container row mx-0">
+    <div class="title col px-0 text-center text-body">
+      <h2>OUR TEAM</h2>
+    </div>
+  </div>
+<div class="row justify-content-center align-items-start"><div class="col-lg-4 col-md-6 col-sm-12 pt-3 pb-5 text-left text-sm-center"><div class="text-center m-2">
+                <img src="/images/adarsh.png" class="img-fluid rounded-circle w-75 border border-dark" alt="Adarsh Ghimire"></img>
+              </div><div class="mt-5 mb-0 text-body">
+              <h2>Adarsh Ghimire</h2>
+            </div>
+            <div class="member text-body"><h5 class="mb-3">Master Student</h5><div class="row justify-content-center pt-4"><span class="fa-stack fa-2x m-2" title="">
+                      <a href="mailto:adarshghimire5@gmail.com">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://scholar.google.com/citations?hl=en&amp;user=DaKTof0AAAAJ">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-google fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://ae.linkedin.com/in/adarshghimire">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span>
+                </div><div class="pt-3">
+                    <div class="description"><!-- Adarsh Ghimire
+
+Some more text to showcase the capabilities:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur a lorem urna.
+Quisque in neque malesuada, sollicitudin nunc porttitor, ornare est.
+Praesent ante enim, bibendum sed hendrerit et, iaculis laoreet felis.
+Morbi efficitur dui sit amet orci porttitor, nec tincidunt turpis elementum. --></div>
+                  </div></div>
+          </div><div class="col-lg-4 col-md-6 col-sm-12 pt-3 pb-5 text-left text-sm-center"><div class="text-center m-2">
+                <img src="/images/xiaoxiong.png" class="img-fluid rounded-circle w-75 border border-dark" alt="Xiaoxiong Zhang"></img>
+              </div><div class="mt-5 mb-0 text-body">
+              <h2>Xiaoxiong Zhang</h2>
+            </div>
+            <div class="member text-body"><h5 class="mb-3">PhD Student</h5><div class="row justify-content-center pt-4"><span class="fa-stack fa-2x m-2" title="">
+                      <a href="mailto:100049862@ku.ac.ae">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="#">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-google fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="#">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span>
+                </div><div class="pt-3">
+                    <div class="description"><!-- Xiaoxiong Zhang
+
+Some more text to showcase the capabilities:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur a lorem urna.
+Quisque in neque malesuada, sollicitudin nunc porttitor, ornare est.
+Praesent ante enim, bibendum sed hendrerit et, iaculis laoreet felis.
+Morbi efficitur dui sit amet orci porttitor, nec tincidunt turpis elementum. --></div>
+                  </div></div>
+          </div><div class="col-lg-4 col-md-6 col-sm-12 pt-3 pb-5 text-left text-sm-center"><div class="text-center m-2">
+                <img src="/images/sajid.png" class="img-fluid rounded-circle w-75 border border-dark" alt="Sajid Javed"></img>
+              </div><div class="mt-5 mb-0 text-body">
+              <h2>Sajid Javed</h2>
+            </div>
+            <div class="member text-body"><h5 class="mb-3">Assistant Professor</h5><div class="row justify-content-center pt-4"><span class="fa-stack fa-2x m-2" title="">
+                      <a href="mailto:sajid.javed@ku.ac.ae">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://scholar.google.com/citations?hl=en&amp;user=6qvbEhUAAAAJ">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-google fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://uk.linkedin.com/in/sajid-javed-a531bb63">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span>
+                </div><div class="pt-3">
+                    <div class="description"><!-- Sajid Javed
+
+Some more text to showcase the capabilities:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur a lorem urna.
+Quisque in neque malesuada, sollicitudin nunc porttitor, ornare est.
+Praesent ante enim, bibendum sed hendrerit et, iaculis laoreet felis.
+Morbi efficitur dui sit amet orci porttitor, nec tincidunt turpis elementum. --></div>
+                  </div></div>
+          </div><div class="col-lg-4 col-md-6 col-sm-12 pt-3 pb-5 text-left text-sm-center"><div class="text-center m-2">
+                <img src="/images/jorge.jpeg" class="img-fluid rounded-circle w-75 border border-dark" alt="Jorge Dias"></img>
+              </div><div class="mt-5 mb-0 text-body">
+              <h2>Jorge Dias</h2>
+            </div>
+            <div class="member text-body"><h5 class="mb-3">Full Professor</h5><div class="row justify-content-center pt-4"><span class="fa-stack fa-2x m-2" title="">
+                      <a href="mailto:jorge.dias@ku.ac.ae">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://scholar.google.com/citations?hl=en&amp;user=liGzaswAAAAJ">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-google fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="#">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span>
+                </div><div class="pt-3">
+                    <div class="description"><!-- Jorge Dias -->
+<!-- Some more text to showcase the capabilities:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur a lorem urna.
+Quisque in neque malesuada, sollicitudin nunc porttitor, ornare est.
+Praesent ante enim, bibendum sed hendrerit et, iaculis laoreet felis.
+Morbi efficitur dui sit amet orci porttitor, nec tincidunt turpis elementum. --></div>
+                  </div></div>
+          </div><div class="col-lg-4 col-md-6 col-sm-12 pt-3 pb-5 text-left text-sm-center"><div class="text-center m-2">
+                <img src="/images/naoufel.jpeg" class="img-fluid rounded-circle w-75 border border-dark" alt="Naoufel Werghi"></img>
+              </div><div class="mt-5 mb-0 text-body">
+              <h2>Naoufel Werghi</h2>
+            </div>
+            <div class="member text-body"><h5 class="mb-3">Full Professor</h5><div class="row justify-content-center pt-4"><span class="fa-stack fa-2x m-2" title="">
+                      <a href="mailto:naoufel.werghi@ku.ac.ae">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://scholar.google.com/citations?user=G_2Xpm0AAAAJ&amp;hl=en">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-google fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span><span class="fa-stack fa-2x m-2" title="">
+                      <a href="https://ae.linkedin.com/in/naoufel-werghi-80846338">
+                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                        <span class="sr-only"></span>
+                      </a>
+                    </span>
+                </div><div class="pt-3">
+                    <div class="description"><!-- Naoufel Werghi -->
+<!-- Some more text to showcase the capabilities:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur a lorem urna.
+Quisque in neque malesuada, sollicitudin nunc porttitor, ornare est.
+Praesent ante enim, bibendum sed hendrerit et, iaculis laoreet felis.
+Morbi efficitur dui sit amet orci porttitor, nec tincidunt turpis elementum. --></div>
+                  </div></div>
+          </div>
+    </div>
+    </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section id="footer" class="fragment ">
+    <div class="container-fluid bg-light ">
+    <div class="container py-5 ">
+
+  <div class="row">
+    <div class="col-md m-2 text-body">
+        <h4></h4>
+        <a href="#">
+          <img src="/images/logo.svg" class="img-fluid w-50" alt="Logo Subtext">
+        </a>
+        <div class="row justify-content-left ml-0">
+            <span class="fa-stack fa-2x mt-3 mr-1" title="facebook">
+              <a href="https://www.facebook.com/khalifauniversity" class="ignore-color-change">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-fw text-light"></i>
+                <span class="sr-only">facebook</span>
+              </a>
+            </span>
+            <span class="fa-stack fa-2x mt-3 mr-1" title="linkedin">
+              <a href="https://www.linkedin.com/school/khalifauniversity/" class="ignore-color-change">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin-in fa-stack-1x fa-fw text-light"></i>
+                <span class="sr-only">linkedin</span>
+              </a>
+            </span>
+        </div>
+    </div>
+    <div class="col-md m-2 text-body">
+        <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link p-0 display-5" href="/#"
+                    class="anchor">VSAP Labs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-0 display-5" href="https://www.ku.ac.ae/">Khalifa University</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-0 display-5" href="/#"
+                    class="anchor">Abu Dhabi, UAE</a>
+              </li>
+        </ul>
+    </div>
+    <div class="col-md m-2 text-body">
+        <div><h4 id="provided-by">Provided by</h4>
+<p>VSAP Labs</p>
+</div>
+    </div>
+  </div>
+    </div>
+    </div>
+</section>
+
+
+<!-- Copyright -->
+<footer class="overlay fragment container-fluid bg-primary" id="copyright">
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-md">
+        <div class="row mx-0 my-2 justify-content-center text-center text-lg-none text-black-50">
+          <div class="row mx-0 mr-lg-auto justify-content-center">
+              <div class="col-auto px-1 copyright-legal">© Copyright&nbsp;2022</div>
+              <div class="col-auto px-0 copyright-by"> by  VSAP Labs</div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</footer>
+<div id="react"></div>
+
+    <!-- Theme Code -->
+      <script async defer src="/scripts/syna-main.min.1a3a81d584c3d2f114f3575196cd38adec80434bd26ffac023d494745d306358.js"></script>
+      <script async defer src="/scripts/syna-hero.min.6bd1f361cd000df565f61f113296ed99e376e920ee7c8508136a21700635dcb5.js"></script>
+      <script async defer src="/scripts/syna-content.min.b0072d521bf38e98e2da1d20333cc046a07539294375bff38d5372885de52181.js"></script>
+      <script async defer src="/scripts/syna-content.min.b0072d521bf38e98e2da1d20333cc046a07539294375bff38d5372885de52181.js"></script>
+  </body>
+</html>
